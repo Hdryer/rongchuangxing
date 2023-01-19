@@ -1,0 +1,93 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 9000
+# 应用名称
+spring:
+<<<<<<< HEAD
+=======
+  jackson:
+    # 格式化全局时间字段 年-月-天 时：分：秒
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 指定时间区域类型 东8区时区 既北京时间
+    time-zone: GMT+8
+>>>>>>> e153035 (融创星项目服务端code第一版)
+  application:
+    name: syscourse
+  # 数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: defaultDataSource
+<<<<<<< HEAD
+    url: jdbc:mysql://localhost:3306/javaee?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+=======
+    #    测试
+#    url: jdbc:mysql://120.24.233.228:3306/course?characterEncoding=utf-8&serverTimezone=GMT%2B8
+#    username: root
+#    password: "*mysql$pwd@bindada"
+
+  #   本地
+#    url: jdbc:mysql://127.0.0.1:3306/course?characterEncoding=utf-8&serverTimezone=GMT%2B8
+#    username: root
+#    password: 123456
+
+    #    正式
+    #url: jdbc:mysql://47.98.33.252:3306/course?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/course?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: "rongchuangxing$pwdmysql"
+
+  # jpa自动生成数据库表
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  # redis
+  redis:
+
+    #   测试
+#    host: 120.24.233.228
+#    password: "*redis$pwd@bindada"
+#    port: 6379
+#    timeout: 3000
+
+
+#   本地
+#    host: 127.0.0.1
+#    password: 123456
+#    port: 6379
+#    timeout: 3000
+
+    #   正式
+    #host: 47.98.33.252
+    host: 127.0.0.1
+    password: "rongchuangxing$pwdredis"
+    port: 6379
+    timeout: 3000
+>>>>>>> e153035 (融创星项目服务端code第一版)
+
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.bindada.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+<<<<<<< HEAD
+=======
+# 张小龙死个妈
+weixin:
+  appID: wxdf01fa9272a01db3
+  appsecret: caa149dc33751f38780c8ca4ad4a7e66
+  token: nmslzhangxiaolong
+  aesKey: ""
+
+
+# 阿里云短信服务
+aliyun:
+  sms:
+    AccessKeyId: LTAI5t9yKk4iRqTaUPMdwMJx
+    AccessKeySecret: 8N3Fc1DsrJKw5K5OgsTbJvkZmJ2Y9Z
+>>>>>>> e153035 (融创星项目服务端code第一版)

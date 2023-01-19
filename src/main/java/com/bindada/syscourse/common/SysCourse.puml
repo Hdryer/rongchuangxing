@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+/'教师用户表'/
+class Teacher<<老师用户>>{
+    id: varchar64<索引>
+    +accountUserName:varchar64<主键>
+    account: varchar64<手机号>
+    password: varchar64<密码>
+    username: varchar64<名字>
+    type: int2<用户类型>
+}
+
+/'学生实体表'/
+class Student<<学生>>{
+    +id: varchar64<主键>
+    name: varchar64<姓名>
+    age: int10<年龄>
+    school: varchar64<学校>
+    schoolArea: varchar64<所属校区>
+    parentName： varchar64<家长姓名>
+    parentPhone: varchar64<家长电话>
+    learnState: int2<在学状态>
+    isExperiment: int2<是否体验生>
+    courseType: varchar64<课程类型>
+    #teacher： varchar64<授课老师>
+    classTime: date<上课时间>
+    amount：int10<缴费金额>
+    remainTimes: int10<剩余次数>
+    description: varchar64<备注>
+}
+Student o--Teacher
+
+
+class Course<<课>>{
+    +id: varchar64<主键>
+    schoolArea:varchar64<上课校区>
+    courseType:varchar64<课程类型>
+    classTime: date<上课时间>
+    #teacher： varchar64<上课老师>
+    students: JSON<Student><上课学生>
+}
+
+Course o--Teacher
+
+class HistoryCourse<<历史课表>>{
+    +id: varchar64<主键>
+    schoolArea:varchar64<上课校区>
+    courseType:varchar64<课程类型>
+    classTime: date<上课时间>
+    #teacher： varchar64<上课老师>
+    students: JSON<Student><上课学生>
+}
+
+HistoryCourse o--Teacher
+@enduml
